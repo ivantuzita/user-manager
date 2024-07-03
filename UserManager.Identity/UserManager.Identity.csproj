@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20240701222235_initial-migration.cs" />
+    <Compile Remove="Migrations\20240701222235_initial-migration.Designer.cs" />
+    <Compile Remove="Migrations\20240701233500_teste.cs" />
+    <Compile Remove="Migrations\20240701233500_teste.Designer.cs" />
+    <Compile Remove="Migrations\UserIdentityDbContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.6" />
