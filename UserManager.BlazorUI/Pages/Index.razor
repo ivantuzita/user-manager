@@ -1,0 +1,51 @@
+﻿@page "/"
+@using UserManager.BlazorUI.Shared;
+
+<PageTitle>Home</PageTitle>
+<br/>
+<br/>
+<br />
+<AuthorizeView Roles="Administrator">
+    <h1>Hello, world!</h1>
+
+    <table id="tblData" class="table">
+        <thead>
+            <tr>
+                <th>
+                    Full Name
+                </th>
+                <th>
+                    CPF
+                </th>
+                <th>
+                    E-mail
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @item.Firstname @item.Lastname
+                    </td>
+                    <td>
+                        @item.Cpf
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" @onclick=@(() => DeleteUser(@item.Id))>Delete User</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</AuthorizeView>
+
+<AuthorizeView Roles="User">
+    <h1>Hello, world!</h1>
+</AuthorizeView>
+
+    

@@ -1,0 +1,53 @@
+﻿﻿<div class="top-row navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="mx-auto" href="">
+            <img src="duett-2.png" style="width:130px;height:50px;">
+        </a>
+    </div>
+</div>
+
+<div class="nav-scrollable">
+    <nav class="flex-column">
+        <AuthorizeView>
+            <Authorized>
+                <div class="nav-item px-3 authorized">
+                    <NavLink class="nav-link">
+                        <strong class="wrap">Hello, @context.User?.Identity?.Name!</strong>
+                    </NavLink>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                Home
+            </NavLink>
+        </div>
+        <AuthorizeView Roles="User">
+            <Authorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="changepassword">Change Password</NavLink>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+        <AuthorizeView>
+            <Authorized>
+                
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="logout">Log Out</NavLink>
+                </div>
+            </Authorized>
+            <NotAuthorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="register">
+                        Register
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="login">
+                        Login
+                    </NavLink>
+                </div>
+            </NotAuthorized>
+        </AuthorizeView>
+    </nav>
+</div>

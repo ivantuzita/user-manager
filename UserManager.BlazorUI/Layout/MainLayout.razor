@@ -1,0 +1,22 @@
+﻿@inherits LayoutComponentBase
+
+@using UserManager.BlazorUI.Shared;
+
+<BlazoredToasts Position="Blazored.Toast.Configuration.ToastPosition.TopRight"
+                Timeout="10"
+                IconType="Blazored.Toast.Configuration.IconType.FontAwesome"
+                SuccessClass="success-toast-override"
+                ErrorIcon="fa fa-bug"
+                SuccessIcon="fa fa-thumbs-up"/>
+
+<div class="page">
+    <div class="sidebar">
+        <SideBar />
+    </div>
+
+    <main>
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>

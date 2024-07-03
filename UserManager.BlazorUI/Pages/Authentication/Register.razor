@@ -1,0 +1,61 @@
+﻿@page "/register"
+
+@if (!string.IsNullOrEmpty(Message))
+{
+   <div>
+        <div class="alert alert-danger">
+            @Message
+        </div>
+   </div> 
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <EditForm Model="@Model" OnValidSubmit="HandleRegister">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="m-3">
+                <label for="firstname" class="form-label">First Name</label>
+                <InputText id="firstname" class="form-control" placeholder="Insert your first name." @bind-Value=@Model.FirstName></InputText>
+                <ValidationMessage For="@(() => Model.FirstName)" />
+            </div>
+            <div class="m-3">
+                <label for="lastname" class="form-label">Last Name</label>
+                <InputText id="lastname" class="form-control" placeholder="Insert your last name." @bind-Value=@Model.LastName></InputText>
+                <ValidationMessage For="@(() => Model.LastName)" />
+            </div>
+            <div class="m-3">
+                <label for="username" class="form-label">Username</label>
+                <InputText id="username" class="form-control" placeholder="Insert your username." @bind-Value=@Model.Username></InputText>
+                <ValidationMessage For="@(() => Model.Username)" />
+            </div>
+            <div class="m-3">
+                <label for="cpf" class="form-label">CPF</label>
+                <InputText id="cpf" class="form-control" placeholder="Insert your CPF." @bind-Value=@Model.Cpf></InputText>
+                <ValidationMessage For="@(() => Model.Cpf)" />
+            </div>
+            <div class="m-3">
+                <label for="email" class="form-label">Email</label>
+                <InputText id="email" class="form-control" placeholder="Insert your e-mail." @bind-Value=@Model.Email></InputText>
+                <ValidationMessage For="@(() => Model.Email)" />
+            </div>
+            <div class="m-3">
+                <label for="password" class="form-label">Password</label>
+                <InputText type="password" id="password" class="form-control" placeholder="Insert a secure password." @bind-Value=@Model.Password></InputText>
+                <ValidationMessage For="@(() => Model.Password)" />
+            </div>
+            <div class="m-3">
+                <label for="password_again" class="form-label">Confirm your password:</label>
+                <InputText type="password" id="password_again" class="form-control" placeholder="Confirm your password." @bind-Value=@PasswordConfirm></InputText>
+                <ValidationMessage For="@(() => Model.Password)" />
+            </div>
+            <div class="m-3">
+                <p class="fst-italic">Already have an account? Log in <a href="login/" class="link-dark"> here</a></p>
+            </div>
+            <div class="m-3">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </EditForm>
+    </div>
+</div>

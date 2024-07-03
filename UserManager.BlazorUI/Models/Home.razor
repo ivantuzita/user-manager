@@ -1,0 +1,13 @@
+﻿@page "/"
+@using UserManager.BlazorUI.Shared;
+
+<PageTitle>Home</PageTitle>
+
+<AuthorizeView>
+    <Authorized>
+        hELLO
+    </Authorized>
+    <NotAuthorized>
+        <RedirectToLogin />
+    </NotAuthorized>
+</AuthorizeView>

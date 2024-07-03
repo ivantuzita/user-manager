@@ -1,0 +1,11 @@
+﻿@page "/logout"
+@using UserManager.BlazorUI.Interfaces;
+@inject IAuthenticationService authService;
+@inject NavigationManager navManager;
+
+@code {
+    protected override async Task OnInitializedAsync() {
+        await authService.Logout();
+        navManager.NavigateTo("/");
+    }
+}
