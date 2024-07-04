@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C80B1843-A0FA-4B76-AF2D-CE21E1511ADD}"
+	ProjectSection(SolutionItems) = preProject
+		swagger.json = swagger.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{A5836A35-8C82-4E60-80C3-FF6A2D4DA64C}"
 EndProject
